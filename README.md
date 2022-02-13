@@ -9,6 +9,6 @@ You can download the [apk here](https://github.com/faycal-test/FoursquareRestaur
 
 # Error state
 <p align="center">
-  <img src="gifs/demo.gif" width="32%"/>
+  <img src="gifs/error_state.gif" width="32%"/>
 </p>
 
