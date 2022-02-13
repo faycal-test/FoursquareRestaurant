@@ -1,6 +1,6 @@
 <h1 align="center">Foursquare Restaurants</h1>
 
-You can download the [apk here](https://github.com/faycal-test/FoursqaureRestaurant/FoursquareRestaurant.apk). <br><br>
+You can download the [apk here](https://github.com/faycal-test/FoursquareRestaurant/raw/master/FoursquareRestaurant.apk). <br><br>
 
 # Demo
 <p align="center">
