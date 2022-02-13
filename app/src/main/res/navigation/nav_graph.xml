@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mapFragment">
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.appfiza.foursquare.ui.places_list.PlacesListFragment"
+        android:label="MapFragment">
+        <action
+            android:id="@+id/action_mapFragment_to_placeDetailsFragment"
+            app:destination="@id/placeDetailsFragment">
+            <argument
+                android:name="frsqID"
+                app:argType="string"
+                app:nullable="false" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/placeDetailsFragment"
+        android:name="com.appfiza.foursquare.ui.place_details.PlaceDetailsFragment"
+        android:label="PlaceDetailsFragment">
+        <argument
+            android:name="frsqID"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
+</navigation>

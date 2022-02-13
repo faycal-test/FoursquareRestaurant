@@ -1,0 +1,428 @@
+{
+  "results": [
+    {
+      "fsq_id": "5e28e22128d3320008dd41e6",
+      "categories": [
+        {
+          "id": 13032,
+          "name": "Cafes, Coffee, and Tea Houses",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/default_",
+            "suffix": ".png"
+          }
+        },
+        {
+          "id": 13338,
+          "name": "Seafood Restaurant",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/seafood_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 2121052,
+      "geocodes": {
+        "main": {
+          "latitude": 21.6156,
+          "longitude": 39.106989
+        }
+      },
+      "location": {
+        "country": "SA",
+        "cross_street": "",
+        "formatted_address": "جدة",
+        "locality": "جدة",
+        "postcode": "",
+        "region": "Makkah"
+      },
+      "name": "Fishing Pear (السقالة)",
+      "related_places": {
+        "parent": {
+          "fsq_id": "5a09c148bcbf7a220aa84c0f",
+          "name": "Jeddah Waterfront"
+        }
+      },
+      "timezone": "Asia/Riyadh"
+    },
+    {
+      "fsq_id": "5c279e5561f070002cc7be60",
+      "categories": [
+        {
+          "id": 13034,
+          "name": "Café",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/cafe_",
+            "suffix": ".png"
+          }
+        },
+        {
+          "id": 13065,
+          "name": "Restaurant",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/default_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 2120935,
+      "geocodes": {
+        "main": {
+          "latitude": 21.567233166965515,
+          "longitude": 39.12502884864807
+        }
+      },
+      "location": {
+        "address": "King Abdulaziz Branch Road Le Prestige Mall",
+        "country": "SA",
+        "cross_street": "King Abdelaziz Rd.",
+        "formatted_address": "King Abdulaziz Branch Road Le Prestige Mall (King Abdelaziz Rd.), جدة 23414",
+        "locality": "Jeddah",
+        "neighborhood": [
+          "Ash Shatee"
+        ],
+        "postcode": "23414",
+        "region": "Makkah"
+      },
+      "name": "Urth Caffè",
+      "related_places": {
+        "parent": {
+          "fsq_id": "531a4c4f498e12b2dae718df",
+          "name": "لو برستيج"
+        },
+        "children": [
+          {
+            "fsq_id": "5f9fbba6a2be1f1fbbbf9419",
+            "name": "Him’s Caffe"
+          }
+        ]
+      },
+      "timezone": "Asia/Riyadh"
+    },
+    {
+      "fsq_id": "5c23afd0b6b04b002cc2f8a9",
+      "categories": [
+        {
+          "id": 13035,
+          "name": "Coffee Shop",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+            "suffix": ".png"
+          }
+        },
+        {
+          "id": 13065,
+          "name": "Restaurant",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/default_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 2128859,
+      "geocodes": {
+        "main": {
+          "latitude": 21.615217900071006,
+          "longitude": 39.187732860445976
+        }
+      },
+      "location": {
+        "address": "Prince Majid Rd, Al Marwah",
+        "country": "SA",
+        "cross_street": "",
+        "formatted_address": "Prince Majid Rd, Al Marwah, جدة 23541",
+        "locality": "جدة",
+        "neighborhood": [
+          "Al-Marwah"
+        ],
+        "postcode": "23541",
+        "region": "مكة المكرمة"
+      },
+      "name": "Kim’s Coffee (قهوة كيمس)",
+      "related_places": {
+        "parent": {
+          "fsq_id": "596906b9178a2a45a7a2b0f9",
+          "name": "المروة بلازا"
+        }
+      },
+      "timezone": "Asia/Riyadh"
+    },
+    {
+      "fsq_id": "6102b20915c3d3525e2382a5",
+      "categories": [
+        {
+          "id": 13145,
+          "name": "Fast Food Restaurant",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/fastfood_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 2124280,
+      "geocodes": {
+        "main": {
+          "latitude": 21.690543,
+          "longitude": 39.110246
+        }
+      },
+      "location": {
+        "country": "SA",
+        "cross_street": "",
+        "formatted_address": "جدة 23718",
+        "locality": "Jeddah",
+        "postcode": "23718",
+        "region": "Makkah"
+      },
+      "name": "McDonald’s",
+      "related_places": {},
+      "timezone": "Asia/Riyadh"
+    },
+    {
+      "fsq_id": "576af6da498ea8ebbc48192d",
+      "categories": [
+        {
+          "id": 13035,
+          "name": "Coffee Shop",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+            "suffix": ".png"
+          }
+        },
+        {
+          "id": 13065,
+          "name": "Restaurant",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/default_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 2768196,
+      "geocodes": {
+        "main": {
+          "latitude": 26.10451457899546,
+          "longitude": 43.9591114040077
+        }
+      },
+      "location": {
+        "address": "Abu Baker As Siddiq Rd",
+        "country": "SA",
+        "cross_street": "",
+        "formatted_address": "Abu Baker As Siddiq Rd, عنيزة 56242",
+        "locality": "Unaizah",
+        "postcode": "56242",
+        "region": "Al-Qassim"
+      },
+      "name": "The Fourth Cup (الكوب الرابع)",
+      "related_places": {},
+      "timezone": "Asia/Riyadh"
+    },
+    {
+      "fsq_id": "5cc2225e1c0b34002c6c0493",
+      "categories": [
+        {
+          "id": 13034,
+          "name": "Café",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/cafe_",
+            "suffix": ".png"
+          }
+        },
+        {
+          "id": 13065,
+          "name": "Restaurant",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/default_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 2886205,
+      "geocodes": {
+        "main": {
+          "latitude": 25.90672448753778,
+          "longitude": 45.34281743304083
+        }
+      },
+      "location": {
+        "address": "Majmaah, king abdullah Rd",
+        "country": "SA",
+        "cross_street": "",
+        "formatted_address": "Majmaah, king abdullah Rd, Al Majma‘ah",
+        "locality": "Al Majma‘ah",
+        "postcode": "",
+        "region": "Riyadh Province"
+      },
+      "name": "Shafaq Cafe (شفق كافيه)",
+      "related_places": {},
+      "timezone": "Asia/Riyadh"
+    },
+    {
+      "fsq_id": "5703ce5ecd102c0255925e40",
+      "categories": [
+        {
+          "id": 13145,
+          "name": "Fast Food Restaurant",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/fastfood_",
+            "suffix": ".png"
+          }
+        },
+        {
+          "id": 13031,
+          "name": "Burger Joint",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/burger_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [
+        {
+          "id": "ab4a3530-d68a-012e-5619-003048cad9da",
+          "name": "McDonald's"
+        }
+      ],
+      "distance": 2633941,
+      "geocodes": {
+        "main": {
+          "latitude": 27.457972801605187,
+          "longitude": 41.650838697189
+        }
+      },
+      "location": {
+        "country": "SA",
+        "cross_street": "",
+        "formatted_address": "",
+        "postcode": ""
+      },
+      "name": "McDonald's (ماكدونالدز)",
+      "related_places": {},
+      "timezone": "Asia/Riyadh"
+    },
+    {
+      "fsq_id": "53f4ac57498e3bd97f602bb3",
+      "categories": [
+        {
+          "id": 13263,
+          "name": "Japanese Restaurant",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/japanese_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 2967158,
+      "geocodes": {
+        "main": {
+          "latitude": 24.700110996630595,
+          "longitude": 46.704706910102985
+        }
+      },
+      "location": {
+        "address": "Abdulaziz Bin Musa'ed Bin Jalawi St",
+        "country": "SA",
+        "cross_street": "at Sultan Bin Abdulaziz St",
+        "formatted_address": "Abdulaziz Bin Musa'ed Bin Jalawi St (at Sultan Bin Abdulaziz St), الرياض 12234",
+        "locality": "Riyadh",
+        "postcode": "12234",
+        "region": "Riyadh Province"
+      },
+      "name": "Myazū (ميازو)",
+      "related_places": {
+        "children": [
+          {
+            "fsq_id": "615f03c6b9f2c50c6dfcb31e",
+            "name": "Pioneers Clinics"
+          }
+        ]
+      },
+      "timezone": "Asia/Riyadh"
+    },
+    {
+      "fsq_id": "507c645ce4b0697bf5706cf4",
+      "categories": [
+        {
+          "id": 13309,
+          "name": "Middle Eastern Restaurant",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/middleeastern_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 2963564,
+      "geocodes": {
+        "main": {
+          "latitude": 24.78082115213011,
+          "longitude": 46.636772627187284
+        }
+      },
+      "location": {
+        "address": "Qassim Rd",
+        "country": "SA",
+        "formatted_address": "Qassim Rd, الرياض 13515",
+        "locality": "Riyadh",
+        "neighborhood": [
+          "Al-Aqeek"
+        ],
+        "postcode": "13515",
+        "region": "Riyadh Province"
+      },
+      "name": "مطعم الحمراء البخاري",
+      "related_places": {},
+      "timezone": "Asia/Riyadh"
+    },
+    {
+      "fsq_id": "5c9e3555ea1e44002cc20602",
+      "categories": [
+        {
+          "id": 13339,
+          "name": "Shawarma Restaurant",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/middleeastern_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 2976689,
+      "geocodes": {
+        "main": {
+          "latitude": 24.809396,
+          "longitude": 46.763519
+        }
+      },
+      "location": {
+        "country": "SA",
+        "cross_street": "",
+        "formatted_address": "الرياض 13243",
+        "locality": "Riyadh",
+        "postcode": "13243",
+        "region": "Riyadh Province"
+      },
+      "name": "Mama noura (ماما نوره)",
+      "related_places": {},
+      "timezone": "Asia/Riyadh"
+    }
+  ],
+  "context": {
+    "geo_bounds": {
+      "circle": {
+        "center": {
+          "latitude": 14.020052662027581,
+          "longitude": 20.68885948508978
+        },
+        "radius": 6694789
+      }
+    }
+  }
+}

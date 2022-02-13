@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FoursquareRestaurant</string>
+
+    <string name="address">Address :</string>
+    <string name="post_code">Post code :</string>
+    <string name="loading_error">Loading error</string>
+    <string name="the_application_encountered_a_loading_error_please_try_again">The application encountered a loading error, please try again.</string>
+    <string name="retry">Retry</string>
+
+</resources>

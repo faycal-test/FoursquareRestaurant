@@ -1,0 +1,120 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+}
+
+apply from: '../dependencies.gradle'
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.appfiza.foursquare"
+        minSdk 21
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+            returnDefaultValues = true
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+
+    sourceSets {
+        androidTest.java.srcDirs += "src/test-common/java"
+        test.java.srcDirs += "src/test-common/java"
+    }
+
+}
+
+dependencies {
+    implementation "androidx.core:core-ktx:$versions.coreKtxVersion"
+    androidTestImplementation "androidx.test:core-ktx:$versions.testCoreKtVersion"
+    implementation "androidx.appcompat:appcompat:$versions.appCompactVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.constraintVersion"
+    implementation "com.google.android.material:material:$versions.materialVersion"
+    implementation "androidx.legacy:legacy-support-v4:$versions.legacyVersion"
+
+    // Google SDK
+    implementation "com.google.android.gms:play-services-maps:$versions.playServicesMaps"
+    implementation "com.google.android.gms:play-services-location:$versions.googleLocationVersion"
+    implementation "com.google.maps.android:android-maps-utils:$versions.androidGoogleMapUtil"
+
+    // JUnit & Espresso
+    testImplementation "junit:junit:$versions.jUnitLocalVersion"
+    androidTestImplementation "androidx.test.ext:junit:$versions.jUnitExtVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espressoVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$versions.espressoVersion"
+    androidTestImplementation "junit:junit:$versions.jUnitLocalVersion"
+    implementation "com.android.support.test.espresso:espresso-idling-resource:$versions.espressoVersion"
+    androidTestImplementation "junit:junit:$versions.jUnitLocalVersion"
+
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.coroutinesVersion"
+    testImplementation "androidx.arch.core:core-testing:$versions.archCompomentVersion"
+    testImplementation "app.cash.turbine:turbine:$versions.turbineVersion"
+
+    // Sandwich
+    implementation "com.github.skydoves:sandwich:$versions.sandwichVersion"
+
+    // Network
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$versions.okhttpVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.retrofitVersion"
+
+    // Network Testing
+    testImplementation "com.squareup.okhttp3:mockwebserver:$versions.okhttpVersion"
+
+    // Mockito
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$versions.mockitoKotlinVersion"
+    testImplementation "org.mockito:mockito-inline:$versions.mockitoInlineVersion"
+    testImplementation "io.mockk:mockk:$versions.mockkVersion"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$versions.glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$versions.glideVersion"
+
+    // Architecture components
+    implementation "androidx.lifecycle:lifecycle-extensions:$versions.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycleVersion"
+
+    // Koin
+    implementation "io.insert-koin:koin-android:$versions.koinVersion"
+    androidTestImplementation "io.insert-koin:koin-test-junit4:$versions.koinVersion"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$versions.navVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$versions.navVersion"
+}
