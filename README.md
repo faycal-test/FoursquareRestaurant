@@ -3,8 +3,8 @@
 You can download the [apk here](https://github.com/faycal-test/FoursqaureRestaurant/FoursquareRestaurant.apk). <br><br>
 
 ### Demo
-<img align="center" src="gifs/demo.gif" width="80%"/>
+<img align="center" src="gifs/demo.gif" width="32%"/>
 
 ### Error state
-<img align="center" src="gifs/demo.gif" width="80%"/>
+<img align="center" src="gifs/demo.gif" width="32%"/>
 
