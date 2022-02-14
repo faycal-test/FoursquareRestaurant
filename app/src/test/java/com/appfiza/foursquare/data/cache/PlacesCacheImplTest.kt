@@ -96,7 +96,7 @@ class PlacesCacheImplTest {
 
     /**
      *  Check that inside the method "insertPlacesPhotos"
-     *  hashMapPlacesPhotos[some id] = placePhotos is executed
+     *  hashMapPlacesPhotos["some id"] = placePhotos is executed
      */
     @Test
     fun `Insert place's photos, ensure photos are inserted into the hashmap`() {
@@ -202,7 +202,7 @@ class PlacesCacheImplTest {
 
     /**
      *  We have three locations A, B, C
-     *  A, B are inside the bound
+     *  A, B are inside the rectangle
      *  it should return only A, B
      */
     @Test
@@ -233,7 +233,7 @@ class PlacesCacheImplTest {
 
     /**
      *  We have three locations A, B, C
-     *  Neither of the locations is inside the bound
+     *  Neither of the locations is inside the rectangle
      *  it should return an empty list
      */
     @Test

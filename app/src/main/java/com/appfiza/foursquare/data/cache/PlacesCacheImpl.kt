@@ -35,8 +35,8 @@ class PlacesCacheImpl(
 
     override fun getPlaces(latLngBounds: LatLngBounds): List<Place> {
         val places = mutableListOf<Place>()
-        val copyHashMapLatLngPlaces = HashMap(hashMapLatLngPlaces)
         // To avoid getting a ConcurrentModificationException when iterating
+        val copyHashMapLatLngPlaces = HashMap(hashMapLatLngPlaces)
         copyHashMapLatLngPlaces.forEach { (latLng, place) ->
             if (latLngBounds.contains(latLng)) places.add(place)
         }

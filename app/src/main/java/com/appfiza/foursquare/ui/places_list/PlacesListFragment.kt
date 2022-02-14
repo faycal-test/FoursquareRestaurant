@@ -76,6 +76,7 @@ class PlacesListFragment : Fragment(R.layout.fragment_place_list), OnMapReadyCal
     ): View {
         binding = FragmentPlaceListBinding.inflate(inflater, container, false)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
+        // No need to map sync if it's already done
         if (!this::map.isInitialized) mapFragment.getMapAsync(this)
         return binding.root
     }
@@ -92,7 +93,7 @@ class PlacesListFragment : Fragment(R.layout.fragment_place_list), OnMapReadyCal
     }
 
     /**
-     *  Setup cluster into the map
+     *  Load clusters into the map
      *  @param [places] List of places
      */
     private fun loadClusters(places: List<Place>) {

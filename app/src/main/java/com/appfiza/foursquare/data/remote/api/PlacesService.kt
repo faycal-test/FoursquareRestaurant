@@ -16,7 +16,7 @@ interface PlacesService {
     /**
      *  Search for places from network in the Foursquare Places database @see [Place Search](https://developer.foursquare.com/reference/place-search)
      *  @param [limit] the number of results to return
-     *  @param [category] place's category ID, ex: museum or restaurant
+     *  @param [category] place's category ID, ex: museum or restaurant etc
      *  @param [swLatLng] the latitude/longitude representing the south/west points of a rectangle
      *  @param [neLatLng] the latitude/longitude representing the north/east points of a rectangle
      */

@@ -1,5 +1,5 @@
 ## 1
-name: Tests (Unit and UI)
+name: Tests (Unit)
 
 ## Actions that will be executed when you push code currently none
 on:

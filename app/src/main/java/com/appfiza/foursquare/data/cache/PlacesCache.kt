@@ -17,28 +17,30 @@ interface PlacesCache {
 
     /**
      *  Insert place's photos to be stored in memory
-     *  @param [fsqID] represents the Foursquare ID
+     *  @param [fsqID] represents the Foursquare ID place of a place
      *  @param [photos] List of [PlacePhotos]
      */
     fun insertPlacesPhotos(fsqID: String, photos: List<PlacePhotos>)
 
     /**
      *  Get places that are inside a specific area (rectangle)
-     *  @param [latLngBounds] The location area
+     *  @param [latLngBounds] representing the south/wes & north/east points of a rectangle.
      */
     fun getPlaces(latLngBounds: LatLngBounds): List<Place>
 
     /**
      *  Get a place by ID
-     *  @param [fsqID] represents the Foursquare ID
+     *
      *  If the place isn't found, it returns NULL
+     *  @param [fsqID] represents the Foursquare ID
      */
     fun getPlace(fsqID: String): Place?
 
     /**
      *  Get place's photos by ID
-     *  @param [fsqID] represents the Foursquare ID
-     *  If the place's photo are not found, it return NULL
+     *
+     *  If the place's photos are not found, it returns NULL
+     *  @param [fsqID] represents the Foursquare ID of a place
      */
     fun getPlacesPhotos(fsqID: String): List<PlacePhotos>?
 

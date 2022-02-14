@@ -1,7 +1,6 @@
 package com.appfiza.foursquare.data
 
 import androidx.annotation.WorkerThread
-import com.appfiza.foursquare.util.DataState
 import com.appfiza.foursquare.data.cache.PlacesCache
 import com.appfiza.foursquare.data.remote.api.PlacesService
 import com.appfiza.foursquare.data.remote.api.mappers.PlaceDTOMapper
@@ -9,6 +8,7 @@ import com.appfiza.foursquare.data.remote.api.mappers.PlacePhotosDTOMapper
 import com.appfiza.foursquare.extentions.neLatLng
 import com.appfiza.foursquare.extentions.swLatLng
 import com.appfiza.foursquare.model.Place
+import com.appfiza.foursquare.util.DataState
 import com.google.android.gms.maps.model.LatLngBounds
 import com.skydoves.sandwich.suspendOnError
 import com.skydoves.sandwich.suspendOnException
@@ -33,21 +33,23 @@ class PlacesRepository(
 
     /**
      *  Get a place from cache
-     *  it can returns NULL if the place isn't stored
+     *
+     *  It can returns NULL if the place isn't stored
      *  @param [fsqID] represents a Foursquare ID for a place
      */
     fun getPlace(fsqID: String): Place? = placesCache.getPlace(fsqID)
 
     /**
      *  Get place's photos
-     *  it can get result from cache if available or the network
+     *
+     *  It get result from cache if available or the network
      *  @param [fsqID] represents a Foursquare ID for a place
      */
     @WorkerThread
     fun fetchPlacePhotos(fsqID: String) = flow {
-        val cachePlacePhotos = placesCache.getPlacesPhotos(fsqID)
+        val cachedPlacePhotos = placesCache.getPlacesPhotos(fsqID)
 
-        cachePlacePhotos?.let {
+        cachedPlacePhotos?.let {
             emit(DataState.Success(it))
         } ?: kotlin.run {
             placesService.fetchPlacePhotos(fsqID)
@@ -63,7 +65,8 @@ class PlacesRepository(
 
     /**
      *  Get places list from within a specific area
-     *  it can get result from cache if available or the network
+     *
+     *  It get result from cache if available or the network
      *  @param [latLngBounds] representing the south/wes & north/east points of a rectangle.
      */
     @WorkerThread
@@ -82,7 +85,6 @@ class PlacesRepository(
             }
             .suspendOnError { emit(DataState.Error) }
             .suspendOnException { emit(DataState.Exception) }
-        println("end ")
     }.onStart { emit(DataState.Loading) }.onCompletion { emit(DataState.Idle) }.flowOn(ioDispatcher)
 
 

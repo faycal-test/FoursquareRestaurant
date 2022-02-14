@@ -141,7 +141,6 @@ class PlacesRepositoryTest {
     @Test
     fun `Ensure fetchPlaces emit list of places`() = runBlocking {
         // GIVEN
-        val fsqID = "A"
         val sw = LatLng(1.1, 1.2)
         val ne = LatLng(34.0, 24.3)
         val latLngBounds = LatLngBounds(sw, ne)

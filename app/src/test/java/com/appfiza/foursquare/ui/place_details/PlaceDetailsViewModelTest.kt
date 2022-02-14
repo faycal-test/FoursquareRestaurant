@@ -95,7 +95,7 @@ class PlaceDetailsViewModelTest {
         }
 
     @Test
-    fun `Call loadPlaceAndPlacePhotos but an exception happens should error live data return false`() =
+    fun `Call loadPlaceAndPlacePhotos but an exception happens should error live data return true`() =
         runBlocking {
             // GIVEN
             val exception = NullPointerException()
@@ -113,7 +113,7 @@ class PlaceDetailsViewModelTest {
 
 
     @Test
-    fun `Call loadPlaceAndPlacePhotos but an error happens should error live data return false`() =
+    fun `Call loadPlaceAndPlacePhotos but an error happens should error live data return true`() =
         runBlocking {
             // GIVEN
             whenever(service.fetchPlacePhotos(fsqID)).thenReturn(ApiResponse.of {
