@@ -89,7 +89,6 @@ class PlacesListFragment : Fragment(R.layout.fragment_place_list), OnMapReadyCal
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = this
-        initObservers()
     }
 
     /**
@@ -133,6 +132,7 @@ class PlacesListFragment : Fragment(R.layout.fragment_place_list), OnMapReadyCal
 
         askLocationPermission()
         setUpClusterer()
+        initObservers()
 
         map.setOnCameraIdleListener {
             val currentUserLatLngScreenBounds = map.projection.visibleRegion.latLngBounds
