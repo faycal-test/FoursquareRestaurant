@@ -19,6 +19,8 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 
 /**
  * Created by Fayçal KADDOURI 🐈 on 11/2/2022.
@@ -30,6 +32,9 @@ class PlacesRepository(
     private val placePhotosDTOMapper: PlacePhotosDTOMapper,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) {
+
+    // Mutex to make writes to cached values thread-safe.
+    private val placeMutex = Mutex()
 
     /**
      *  Get a place from cache
@@ -77,9 +82,14 @@ class PlacesRepository(
         )
             .suspendOnSuccess {
                 val placesFromNetwork = data.places.map { placeDTOMapper.mapToDomain(it) }
-                placesCache.insertPlaces(placesFromNetwork)
 
-                val cachedPlaces = placesCache.getPlaces(latLngBounds)
+                placeMutex.withLock {
+                    placesCache.insertPlaces(placesFromNetwork)
+                }
+
+                val cachedPlaces = placeMutex.withLock {
+                    placesCache.getPlaces(latLngBounds)
+                }
 
                 emit(DataState.Success(cachedPlaces))
             }
