@@ -77,7 +77,7 @@ class PlacesListFragment : Fragment(R.layout.fragment_place_list), OnMapReadyCal
         binding = FragmentPlaceListBinding.inflate(inflater, container, false)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         // No need to map sync if it's already done
-        if (!this::map.isInitialized) mapFragment.getMapAsync(this)
+        if (!this::map.isInitialized) mapFragment.getMapAsync(this) else initObservers()
         return binding.root
     }
 
