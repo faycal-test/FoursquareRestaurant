@@ -16,7 +16,7 @@ class FakeCacheImpl : PlacesCache {
 
     override fun insertPlaces(places: List<Place>) {}
 
-    override fun insertPlacesPhotos(fsqID: String, photos: List<PlacePhotos>) {}
+    override fun insertPlacePhotos(fsqID: String, photos: List<PlacePhotos>) {}
 
     override fun getPlaces(latLngBounds: LatLngBounds): List<Place> {
         return listOf(mockPlaceDTO("A", 23.32, 34.3).toDomain())

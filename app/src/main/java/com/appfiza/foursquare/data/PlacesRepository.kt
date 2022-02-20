@@ -21,6 +21,7 @@ import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
+import kotlin.random.Random
 
 /**
  * Created by Fayçal KADDOURI 🐈 on 11/2/2022.
@@ -31,51 +32,36 @@ class PlacesRepository(
     private val placeDTOMapper: PlaceDTOMapper,
     private val placePhotosDTOMapper: PlacePhotosDTOMapper,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
-) {
+) : Repository {
 
     // Mutex to make writes to cached values thread-safe.
     private val placeMutex = Mutex()
 
-    /**
-     *  Get a place from cache
-     *
-     *  It can returns NULL if the place isn't stored
-     *  @param [fsqID] represents a Foursquare ID for a place
-     */
-    fun getPlace(fsqID: String): Place? = placesCache.getPlace(fsqID)
+    override fun getPlace(fsqID: String): Place? = placesCache.getPlace(fsqID)
 
-    /**
-     *  Get place's photos
-     *
-     *  It get result from cache if available or the network
-     *  @param [fsqID] represents a Foursquare ID for a place
-     */
+
     @WorkerThread
-    fun fetchPlacePhotos(fsqID: String) = flow {
+    override fun fetchPlacePhotos(fsqID: String) = flow {
         val cachedPlacePhotos = placesCache.getPlacesPhotos(fsqID)
 
-        cachedPlacePhotos?.let {
-            emit(DataState.Success(it))
-        } ?: kotlin.run {
+        if (cachedPlacePhotos.isNotEmpty())  {
+            emit(DataState.Success(cachedPlacePhotos))
+        } else {
             placesService.fetchPlacePhotos(fsqID)
                 .suspendOnSuccess {
                     val placePhotosList = data.map { placePhotosDTOMapper.mapToDomain(it) }
-                    placesCache.insertPlacesPhotos(fsqID, placePhotosList)
-                    emit(DataState.Success(placePhotosList))
+                    placesCache.insertPlacePhotos(fsqID, placePhotosList)
+                    emit(DataState.Success(Unit))
                 }
                 .suspendOnError { emit(DataState.Error) }
                 .suspendOnException { emit(DataState.Exception) }
         }
-    }.onStart { emit(DataState.Loading) }.onCompletion { emit(DataState.Idle) }.flowOn(ioDispatcher)
 
-    /**
-     *  Get places list from within a specific area
-     *
-     *  It get result from cache if available or the network
-     *  @param [latLngBounds] representing the south/wes & north/east points of a rectangle.
-     */
+    }.flowOn(ioDispatcher)
+
+
     @WorkerThread
-    fun fetchPlaces(latLngBounds: LatLngBounds) = flow {
+    override fun fetchPlaces(latLngBounds: LatLngBounds) = flow {
         placesService.fetchPlaces(
             swLatLng = latLngBounds.swLatLng(),
             neLatLng = latLngBounds.neLatLng()

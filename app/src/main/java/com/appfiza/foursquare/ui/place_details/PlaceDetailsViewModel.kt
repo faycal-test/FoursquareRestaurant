@@ -4,10 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.appfiza.foursquare.util.DataState
-import com.appfiza.foursquare.data.PlacesRepository
 import com.appfiza.foursquare.model.Place
-import com.appfiza.foursquare.model.PlacePhotos
+import com.appfiza.foursquare.usecases.GetPlaceAndPhotosUseCase
+import com.appfiza.foursquare.util.DataState
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -16,7 +15,7 @@ import kotlinx.coroutines.launch
  */
 class PlaceDetailsViewModel(
     private val fsqID: String,
-    private val repository: PlacesRepository
+    private val getPlaceAndPhotosUseCase: GetPlaceAndPhotosUseCase
 ) : ViewModel() {
 
     private val _errorLiveData: MutableLiveData<Boolean> = MutableLiveData()
@@ -24,9 +23,6 @@ class PlaceDetailsViewModel(
 
     private val _loadingLiveData: MutableLiveData<Boolean> = MutableLiveData()
     val loadingLiveData: LiveData<Boolean> = _loadingLiveData
-
-    private val _placePhotosLiveData: MutableLiveData<List<PlacePhotos>> = MutableLiveData()
-    val placePhotosLiveData: LiveData<List<PlacePhotos>> = _placePhotosLiveData
 
     private val _placeLiveData: MutableLiveData<Place> = MutableLiveData()
     val placeLiveData: LiveData<Place> = _placeLiveData
@@ -46,13 +42,10 @@ class PlaceDetailsViewModel(
      */
     fun loadPlaceAndPlacePhotos() {
         viewModelScope.launch {
-            repository.fetchPlacePhotos(fsqID).collect {
+            getPlaceAndPhotosUseCase(fsqID).collect {
                 when (it) {
                     is DataState.Success -> {
-                        repository.getPlace(fsqID)?.let { place ->
-                            _placeLiveData.value = place
-                        }
-                        _placePhotosLiveData.value = it.data
+                        _placeLiveData.value = it.data
                     }
                     is DataState.Idle -> {
                         _loadingLiveData.value = false

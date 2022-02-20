@@ -51,8 +51,8 @@ class PlacesCacheImplTest {
         placePhotos1.add(placePhotoB)
         placePhotos2.add(placePhotoC)
 
-        placesCacheImpl.insertPlacesPhotos(fsqID1, placePhotos1)
-        placesCacheImpl.insertPlacesPhotos(fsqID2, placePhotos2)
+        placesCacheImpl.insertPlacePhotos(fsqID1, placePhotos1)
+        placesCacheImpl.insertPlacePhotos(fsqID2, placePhotos2)
 
         // WHEN
         val result = placesCacheImpl.getPlacesPhotos(fsqID3)
@@ -82,8 +82,8 @@ class PlacesCacheImplTest {
         placePhotos1.add(placePhotoB)
         placePhotos2.add(placePhotoC)
 
-        placesCacheImpl.insertPlacesPhotos(fsqID1, placePhotos1)
-        placesCacheImpl.insertPlacesPhotos(fsqID2, placePhotos2)
+        placesCacheImpl.insertPlacePhotos(fsqID1, placePhotos1)
+        placesCacheImpl.insertPlacePhotos(fsqID2, placePhotos2)
 
         // WHEN
         val result = placesCacheImpl.getPlacesPhotos(fsqID1)
@@ -112,7 +112,7 @@ class PlacesCacheImplTest {
         placePhotos.add(placePhotoC)
 
         // WHEN
-        placesCacheImpl.insertPlacesPhotos(fsqID, placePhotos)
+        placesCacheImpl.insertPlacePhotos(fsqID, placePhotos)
 
         // THEN
         verify(hashMapPlacesPhotos, atLeastOnce())[fsqID] = placePhotos

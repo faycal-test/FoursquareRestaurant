@@ -134,7 +134,7 @@ class PlacesRepositoryTest {
             }
 
             verify(fakePlacesCache, atLeastOnce()).getPlacesPhotos(fsqID)
-            verify(fakePlacesCache, atLeastOnce()).insertPlacesPhotos(fsqID, expectedResultToBeCached)
+            verify(fakePlacesCache, atLeastOnce()).insertPlacePhotos(fsqID, expectedResultToBeCached)
             verifyNoMoreInteractions(fakePlacesCache)
         }
 
