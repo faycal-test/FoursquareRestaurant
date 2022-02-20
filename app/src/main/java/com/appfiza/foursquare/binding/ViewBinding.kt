@@ -3,6 +3,7 @@ package com.appfiza.foursquare.binding
 import android.view.View
 import androidx.databinding.BindingAdapter
 import androidx.viewpager.widget.ViewPager
+import com.appfiza.foursquare.model.Place
 import com.appfiza.foursquare.model.PlacePhotos
 import com.appfiza.foursquare.ui.place_details.PlacePagerAdapter
 import com.appfiza.foursquare.util.gone
@@ -41,8 +42,8 @@ object ViewBinding {
 
     @JvmStatic
     @BindingAdapter("showCard")
-    fun showCard(view: View, listPlacePhotos: List<PlacePhotos>?) {
-        listPlacePhotos?.let { view.visible() }
+    fun showCard(view: View, place: Place?) {
+        place?.let { view.visible() }
     }
 
 }

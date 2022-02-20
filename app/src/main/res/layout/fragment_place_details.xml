@@ -53,7 +53,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:listPlacesPhotos="@{viewModel.placePhotosLiveData}"
+            app:listPlacesPhotos="@{viewModel.placeLiveData.photos}"
             tools:visibility="visible">
 
         </androidx.viewpager.widget.ViewPager>
@@ -70,7 +70,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/viewPager"
-            app:showCard="@{viewModel.placePhotosLiveData}"
+            app:showCard="@{viewModel.placeLiveData}"
             tools:visibility="visible">
 
             <androidx.constraintlayout.widget.ConstraintLayout

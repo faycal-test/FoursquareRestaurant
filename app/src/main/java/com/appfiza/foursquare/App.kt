@@ -28,6 +28,7 @@ class App : Application() {
                 mappersModule,
                 viewModelModule,
                 repositoryModule,
+                useCaseModule
             )
         }
     }
