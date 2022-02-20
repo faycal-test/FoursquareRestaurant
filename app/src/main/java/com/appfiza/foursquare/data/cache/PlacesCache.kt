@@ -35,12 +35,4 @@ interface PlacesCache {
      */
     fun getPlace(fsqID: String): Place?
 
-    /**
-     *  Get place's photos by ID
-     *
-     *  If the place's photos are not found, it returns NULL
-     *  @param [fsqID] represents the Foursquare ID of a place
-     */
-    fun getPlacesPhotos(fsqID: String): List<PlacePhotos>
-
 }

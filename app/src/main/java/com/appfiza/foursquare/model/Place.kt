@@ -10,7 +10,7 @@ data class Place(
     val name: String,
     val geocodes: Geocodes,
     val location: Location,
-    val photos: List<PlacePhotos> = listOf()
+    val photos: List<PlacePhotos> = emptyList()
 ) {
     /**
      * Convert latitude and longitude into a LatLng object

@@ -19,10 +19,6 @@ class PlacesCacheImpl(
         hashMapPlaces[fsqID]?.copy(photos = photos)?.let { hashMapPlaces[fsqID] = it }
     }
 
-    override fun getPlacesPhotos(fsqID: String): List<PlacePhotos> {
-        return hashMapPlaces[fsqID]?.photos ?: emptyList()
-    }
-
     override fun getPlace(fsqID: String): Place? = hashMapPlaces[fsqID]
 
     override fun getPlaces(latLngBounds: LatLngBounds): List<Place> {

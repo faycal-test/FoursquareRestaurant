@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.appfiza.foursquare.util.DataState
 import com.appfiza.foursquare.data.PlacesRepository
+import com.appfiza.foursquare.data.Repository
 import com.appfiza.foursquare.extentions.toLatLng
 import com.appfiza.foursquare.model.Place
 import com.appfiza.foursquare.util.Event
@@ -20,7 +21,7 @@ import kotlinx.coroutines.launch
  */
 class PlacesListViewModel(
     private val lastKnownLocation: Flow<Location?>,
-    private val placesRepository: PlacesRepository
+    private val placesRepository: Repository
 ) : ViewModel() {
 
     private val _placesLiveData: MutableLiveData<List<Place>> = MutableLiveData()

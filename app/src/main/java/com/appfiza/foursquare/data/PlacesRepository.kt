@@ -42,7 +42,7 @@ class PlacesRepository(
 
     @WorkerThread
     override fun fetchPlacePhotos(fsqID: String) = flow {
-        val cachedPlacePhotos = placesCache.getPlacesPhotos(fsqID)
+        val cachedPlacePhotos = getPlace(fsqID)?.photos ?: emptyList()
 
         if (cachedPlacePhotos.isNotEmpty())  {
             emit(DataState.Success(cachedPlacePhotos))
