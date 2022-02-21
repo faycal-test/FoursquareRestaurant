@@ -12,7 +12,11 @@ class PlacesCacheImpl(
 ) : PlacesCache {
 
     override fun insertPlaces(places: List<Place>) {
-        places.forEach { hashMapPlaces[it.id] = it }
+        places.forEach {
+            if (!hashMapPlaces.containsKey(it.id)) {
+                hashMapPlaces[it.id] = it
+            }
+        }
     }
 
     override fun insertPlacePhotos(fsqID: String, photos: List<PlacePhotos>) {
